@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Recipe++ : Recipe Search</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" type="text/css" media="screen" href="./css/reset.css" />
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+  
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+  <link rel="stylesheet" type="text/css" media="screen" href="./css/main.css" />
+  <link rel="stylesheet" type="text/css" media="screen" href="./css/animate.css" />
+  <script defer src="https://use.fontawesome.com/releases/v5.0.9/js/all.js" integrity="sha384-8iPTk2s/jMVj81dnzb/iFR2sdA7u06vHJyyLlAd4snFpCl/SnyUjRrbdJsw1pGIl" crossorigin="anonymous"></script>
+  <script src="./js/main.js"></script>
+</head>
+<body>
+  
+  
+    
+  <div class="container-fluid main-container">
+
+    <!-- Row to contain main layout - height is set to 100 with Bootstrap h-100 class -->
+    <div class="h-100 row">
+
+        <!-- Sidebar -->
+        <div class='col-md-3 col-sm-12 p-0 sidebar'>
+
+          <!-- Sidebar Header -->
+          <div class="header-bg name-height sidebar-header">
+              <h3 class="fluid-header header-font shadow white">Recipe++</h3>
+              <div class="peekinghamster hide">
+                  <!-- <img data-toggle = "tooltip" title = "Let me decide!" id = "recipe-top-hamster" class = "hamster bounceIn" src = "./images/recipetophamster.png"> -->
+                  <input type = "image" data-toggle = "tooltip" data-placement="right" title = "Let me decide!" id = "recipe-top-hamster-choose" src = "./images/recipetophamster.png" class = "hamster bounceIn js-you-decide submit">
+                  <input type = "image" data-toggle = "tooltip" data-placement="right" title = "Go back!" id = "recipe-top-hamster-back"src = "./images/recipetophamster.png" class = "hamster bounceIn js-results-back submit hide">
+                </div>
+              <!-- <input type="image" src="logg.png" name="saveForm" class="btTxt submit" id="saveForm" /> -->
+          </div>
+          
+          <!-- Input section for ingredients to be entered -->
+          <form id="ingredient-form" class="m-2">
+      
+            <div class="cl-row">
+              <label for="ingredient-input" class = "ingredient-input" >Add an Ingredient:</label>
+              <!-- <input type="text" id="ingredient-input" class="form-control mr-sm-2 js-input input"><br>
+              <button class="btn button-border button-color ing-btn-hover js-add submit">Add Ingredient</button>
+               -->
+              
+              <div class="input-group">
+                <input type="text" id="ingredient-input" class="form-control mr-sm-2 js-input input" placeholder="ex. carrot">
+                <span class="input-group-btn">
+                    <button class="btn button-border button-color ing-btn-hover js-add submit">Add</button>
+                </span>
+              </div>
+              <button class="btn button-border button-color-two rec-btn-hover js-submit">Get Recipes!</button>
+            </div>
+      
+          </form>
+      
+          <!-- Section for where ingredient buttons will be appended -->
+          <div class='js-list mx-auto mt-1 p-2 ingredients-list'>
+
+          </div>
+
+            <!-- <button class="btn btn-danger button-border hide js-you-decide m-2">You Decide!</button>
+            <button class="btn btn-info button-border hide js-results-back m-2">Get my Results Back</button> -->
+    
+      </div>
+
+      <!-- The right side of the layout -->
+      <div class="col-md-9 col-sm-12 h-100 offset-md-3 bg-violet">
+        <div id = "loading-image" class="spinning-icon w-100 h-100 hide">
+             <i class="fas fa-spinner fa-spin spinning-icon"></i>
+        </div>
+        <div class="instructions w-100">
+            <div class="instruction-text">
+                <p class="fluid-instructions header-font bounceIn">What's in your fridge? <br>
+                Enter some ingredients you have at home
+                and we'll find recipes for you!</p> 
+            </div>
+            <div class="utensil-icon">
+                <i class="fas fa-utensils fluid-utensil" style = 'color: #FFA56A;'></i><!--#F59D00-->
+            </div>
+            <div class="recipehamster">
+                <img class = "hamster bounceIn" src = "./images/recipehamster.png"
+                    onmouseover="this.src='./images/recipehamsterhover.png'"
+                    onmouseout="this.src='./images/recipehamster.png'" alt="">
+            </div>
+        </div>
+        
+        <!-- Bootstrap cards of the recipes will populate in the div below -->
+        <div class="bg-violet d-flex js-recipes justify-content-around row"> 
+          
+        </div>
+
+      </div>
+
+    </div>
+    <div class="otherOption">
+        <a href="./restaurant.html "><button class = "btn btn-danger wiggle" type = "text">Nah let's order out... <i class="fas fa-wine-glass"></i></button></a>
+    </div>
+    <div class="legend">
+      <div class="seedling">
+          <i class="fas fa-lg fa-seedling legend-icon" title = "Vegan" style="color:#96E941; padding: 2px;"></i><span class = "brazil"> - Vegan</span>
+      </div>
+      <div class="leaf">
+          <i class="fas fa-lg fa-leaf legend-icon" title = "Vegetarian" style="color:#35BD78; padding: 2px;"></i><span class = "brazil"> - Vegetarian</span>
+      </div>
+      <div class="down">
+          <i class="fas fa-lg fa-arrow-alt-circle-down legend-icon" title = "Low-Fat" style="color:#FF7347; padding: 2px;"></i><span class = "brazil"> - Low-Fat</span>
+      </div>
+    </div>
+    <div class="next hide">
+        <button class = "btn btn-success point js-next-button"><i class="fas fa-angle-double-right fa-2x"></i></button>
+    </div>
+
+    <footer class="footer">
+        <p>© 2018 Recipe++</p>
+    </footer> 
+
+
+  </div>
+
+  
+</body>
+</html>

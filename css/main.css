@@ -1,0 +1,492 @@
+/* Fonts */
+
+@font-face {
+    font-family: 'brazil-font';
+    src: url('./../fonts/BrazilFood3.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'wednesday';
+    src: url('./../fonts/Wednesday.ttf') format('truetype');
+}
+
+/* Attempting glowing effect */
+@keyframes glowing {
+    0% { box-shadow: 0 0 -10px rgb(189, 60, 0); }
+    40% { box-shadow: 0 0 800px rgb(189, 60, 0); }
+    60% { box-shadow: 0 0 800px rgb(189, 60, 0); }
+    100% { box-shadow: 0 0 -10px rgb(189, 60, 0); }
+}
+
+@-webkit-keyframes roll-in-bottom {
+    0% {
+      -webkit-transform: translateY(800px) rotate(540deg);
+              transform: translateY(800px) rotate(540deg);
+      opacity: 0;
+    }
+    100% {
+      -webkit-transform: translateY(0) rotate(0deg);
+              transform: translateY(0) rotate(0deg);
+      opacity: 1;
+    }
+}
+
+@keyframes roll-in-bottom {
+    0% {
+      -webkit-transform: translateY(800px) rotate(540deg);
+              transform: translateY(800px) rotate(540deg);
+      opacity: 0;
+    }
+    100% {
+      -webkit-transform: translateY(0) rotate(0deg);
+              transform: translateY(0) rotate(0deg);
+      opacity: 1;
+    }
+}
+
+.roll-in-bottom {
+    -webkit-animation: roll-in-bottom 0.6s ease-out both, glowing 3000ms infinite;
+            animation: roll-in-bottom 0.6s ease-out both, glowing 3000ms infinite;
+}
+
+.hamster:hover{
+    -webkit-animation-duration: .75s;
+    animation-duration: .75s;
+    -webkit-animation-name: bounceIn;
+    animation-name: bounceIn;
+}
+@keyframes bounceIn {
+    from,
+    20%,
+    40%,
+    60%,
+    80%,
+    to {
+      -webkit-animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+      animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+    }
+  
+    0% {
+      opacity: 0;
+      -webkit-transform: scale3d(0.3, 0.3, 0.3);
+      transform: scale3d(0.3, 0.3, 0.3);
+    }
+  
+    20% {
+      -webkit-transform: scale3d(1.1, 1.1, 1.1);
+      transform: scale3d(1.1, 1.1, 1.1);
+    }
+  
+    40% {
+      -webkit-transform: scale3d(0.9, 0.9, 0.9);
+      transform: scale3d(0.9, 0.9, 0.9);
+    }
+  
+    60% {
+      opacity: 1;
+      -webkit-transform: scale3d(1.03, 1.03, 1.03);
+      transform: scale3d(1.03, 1.03, 1.03);
+    }
+  
+    80% {
+      -webkit-transform: scale3d(0.97, 0.97, 0.97);
+      transform: scale3d(0.97, 0.97, 0.97);
+    }
+  
+    to {
+      opacity: 1;
+      -webkit-transform: scale3d(1, 1, 1);
+      transform: scale3d(1, 1, 1);
+    }
+  }
+
+.button-glow {
+    animation: glowing 3000ms infinite;
+}
+
+#map {
+    height: 100%;
+}
+
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+.main-container {
+    height: 100vh;
+}
+
+.header-bg {
+    background-color: rgb(189, 60, 0);
+    /* background-color: rgb(150, 29, 29); */
+    /* background-color: #e67300; */
+}
+.rest-header-color{
+    background: #81171B;
+}
+
+.rest-sidebar-color{
+    background: #C75146;
+}
+.header-font {
+    font-family: 'wednesday', arial;
+    color: #540804;
+    
+}
+
+.header-size {
+    font-size: 6rem;
+}
+
+.ingredients-list {
+    /* background-color: palegreen; */
+    margin: 2rem 0;
+}
+
+.ingredient-input{
+    font-family: 'brazil-font', arial;
+    color: rgb(151, 35, 35);
+    font-size: 2em;
+    font-weight: bold;
+}
+
+.brazil{
+    /* font-family: 'brazil-font', arial; */
+    color: rgb(104, 20, 20);
+    /* font-size: 1.5em; */
+}
+.m-auto {
+    margin: 0 auto;
+}
+
+.name-height {
+    height: 27vh;
+}
+
+.bg-violet {
+    /* background-color: white; */
+    /* width: 80vw */
+    background-image: url(../images/wood_pattern.png);
+}
+.bg-pink {
+    /* background-color: white; */
+    /* width: 80vw */
+    background-image: url(../images/hip-square.png);
+
+}
+.button-border {
+    border: 2px solid white;
+}
+
+.button-color {
+    background-color:chocolate;
+    color: white;
+}
+.search-button-color{
+    background-color: rgb(151, 35, 35);
+    color: white;
+}
+.button-color-two {
+    background-color: rgb(151, 35, 35);
+    color: white;
+    margin-top: 1em;
+    width: 100%;
+    font-family: 'wednesday', arial;
+    font-size: 1.5em;
+}
+
+.ing-btn-hover:hover {
+    border-color: rgb(145, 53, 1);
+}
+
+.rec-btn-hover:hover {
+    border-color: chocolate;
+}
+
+.fluid-header {
+    font-size: calc(35px + (100 - 14) * ((100vw - 300px) / (1600 - 300)));
+}
+
+.fluid-instructions {
+    font-size: calc(25px + (60 - 14) * ((100vw - 300px) / (1600 - 300)));
+}
+
+.fluid-utensil {
+    font-size: calc(150px + (500 - 14) * ((100vw - 300px) / (1600 - 300)));
+}
+
+.shadow {
+    text-shadow: 2px 2px 8px rgb(202, 124, 124);
+}
+
+
+.sidebar {
+    /* background-color: #FFA56A; */
+    background-color: #ffb366;
+    height: 100%;
+    position: fixed;
+    width: 25vw;
+    left: 0;
+    top: 0;
+}
+.sidebar-restaurant {
+    height: 100%;
+    position: fixed;
+    width: 25vw;
+    left: 0;
+    top: 0;
+}
+.bg-orange{
+    background-color: darkorange;
+}
+
+.submit {
+    margin: 0.25em;
+}
+
+.cardTop{
+    display: flex;
+    justify-content: space-between;
+}
+.hover-fade{
+    position: relative;
+}
+.hover-fade:hover img{
+  opacity: 0.3;
+}
+
+.hover-fade:hover .ingredient-scroll {
+  opacity: 1; 
+}
+
+.hover-fade-fade img,
+.ingredient-scroll {
+  -webkit-transition: opacity 0.3s ease-out;
+  -moz-transition: opacity 0.3s ease-out;
+  -o-transition: opacity 0.3s ease-out;
+  transition: opacity 0.3s ease-out;
+}
+
+.ingredient-scroll {
+  position: absolute;
+  color: white;
+  left: 0;
+  top: 20%;
+  right: 0;
+  text-align: center;
+  opacity: 0;
+  background: #1DA83F;
+  font-size: 1em;
+  overflow-y: scroll;
+  height: 55%;
+  padding: .5em;
+  border-radius: 3%;
+
+}
+
+.otherOption{
+    position: fixed;
+    bottom: 1em;
+    right: 1em;
+    z-index: 99;
+}
+.otherOption:hover{
+    transform: scale(1.1);
+}
+
+.legend{
+    position: fixed;
+    bottom: 1em;
+    left: 1em;
+    z-index: 99;
+    padding: .5em;
+
+}
+
+.legend-icon{
+    opacity: 1;
+}
+
+.next{
+    position: fixed;
+    top: 1em;
+    right: 1em;
+    z-index: 99;
+    padding: .5em;
+
+}
+.instructions{
+    display: flex;
+    flex-wrap: wrap;
+    text-align: center;
+    margin: 2em 1em 1em 0;
+    max-height: 15vh;
+    font-size: 3em;
+    position: relative;
+    justify-content: center;
+}
+
+.instruction-text{
+    position: absolute;
+    z-index: 99;
+    margin-top: 2em;
+
+}
+.utensil-icon {
+    opacity: .5;
+}
+
+.utensil-sizing {
+    font-size: 15rem;
+}
+
+
+
+.white {
+    color: white;
+}
+
+.wiggle:hover {
+    animation: shake .75s; 
+    animation-iteration-count: infinite; 
+    
+}
+
+.googleimg {
+    height: 40vh;
+    
+}
+
+@keyframes shake {
+    0% { transform: translate(1px, 1px) rotate(0deg); }
+    10% { transform: translate(-1px, -2px) rotate(-1deg); }
+    20% { transform: translate(-3px, 0px) rotate(1deg); }
+    30% { transform: translate(3px, 2px) rotate(0deg); }
+    40% { transform: translate(1px, -1px) rotate(1deg); }
+    50% { transform: translate(-1px, 2px) rotate(-1deg); }
+    60% { transform: translate(-3px, 1px) rotate(0deg); }
+    70% { transform: translate(3px, 1px) rotate(-1deg); }
+    80% { transform: translate(-1px, -1px) rotate(1deg); }
+    90% { transform: translate(1px, 2px) rotate(0deg); }
+    100% { transform: translate(1px, -2px) rotate(-1deg); }
+}
+
+.point{
+    padding: 0em 1em 0em 1em;
+}
+.point:hover {
+    animation: point .75s; 
+    animation-iteration-count: infinite; 
+    
+}
+
+@keyframes point {
+    0% { transform: translate(4px, 0px);}
+    20% { transform: translate(-4px, 0px); }
+    40% { transform: translate(4px, 0px); }
+    60% { transform: translate(-4px, 0px); }
+    80% { transform: translate(4px, 0px); }
+    100% { transform: translate(4px, 0px); }
+}
+.sidebar-header{
+    position: relative;
+}
+.recipehamster{
+    position: fixed;
+    bottom: 50px;
+    right: 0px;
+    width: 20%;
+}
+.peekinghamster{
+    width: 25%;
+    position: absolute;
+    bottom: 0;
+    left: 10px;
+}
+
+.peekinghamster:hover{
+    transform: scale(1.2);
+}
+.hamster{
+    width: 100%;
+}
+
+.footer {
+    position: fixed;
+    z-index: 1;
+    bottom: 0;
+    width: 100%;
+    clear: both;
+    text-align:center;
+    font-family: 'wednesday', arial;
+    color: #540804;
+    font-size: 1.1em;
+}
+
+.hamsterSm {
+    width: 75%;
+    height: 75%; 
+
+}
+.restauranthamster{
+    position: fixed;
+    bottom: 75px;
+    right: 0px;
+    width: 20%;
+}
+
+.search-border:hover{
+    border-color: white;
+}
+
+.spinning-icon{
+    display: block;
+    flex-wrap: wrap;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    height: 100%;
+    font-size: 3em;
+    position: relative;
+    justify-content: center;
+    color: rgb(189, 60, 0);
+}
+
+.hide{
+    display: none;
+}
+/* ------------------------------------------------------------------
+----------------------------MEDIA QUERIES----------------------------
+--------------------------------------------------------------------*/
+
+/* These rules take effect when the browser's width is 768px or less. */
+@media screen and (max-width: 767px) {
+
+    .fluid-header {
+        font-size: 6rem;
+    }
+
+    .fluid-utensil {
+        font-size: 17rem;
+    }
+
+    /* Adjust the sidebar so that it snaps to the top of the screen for med to small screen sizes */
+    .sidebar {
+        height: 100%;
+        position: inherit;
+        width: 100vw;
+    }
+    .peekinghamster{
+        left: 70%;
+    }
+    .recipehamster{
+        display: none;
+    }
+
+    .restauranthamster{
+        display: none;
+    }
+
+}
